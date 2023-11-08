@@ -1,11 +1,12 @@
 import React from 'react';
-import './App.css';
+import styles from './App.scss';
+import {AppRouter} from "@/components/AppRouter/AppRouter";
 
 function App() {
   return (
-      <div>
-        App
-      </div>
+      <main className={styles.App}>
+        <AppRouter/>
+      </main>
   );
 }
 
