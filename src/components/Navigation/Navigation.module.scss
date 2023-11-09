@@ -1,0 +1,19 @@
+.Navigation {
+  display: flex;
+  align-items: center;
+}
+
+.navigationLink {
+  display: block;
+  margin-right: 20px;
+  text-decoration: none;
+  color: gray;
+
+  &:hover {
+    color: black;
+  }
+}
+
+.activeLink {
+  color: cornflowerblue;
+}

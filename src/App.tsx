@@ -1,13 +1,13 @@
 import React from 'react';
 import styles from './App.scss';
-import {AppRouter} from "@/components/AppRouter/AppRouter";
+import {Main} from "@/layout";
 
 function App() {
-  return (
-      <main className={styles.App}>
-        <AppRouter/>
-      </main>
-  );
+    return (
+        <main className={styles.App}>
+            <Main/>
+        </main>
+    );
 }
 
 export default App;

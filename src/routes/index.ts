@@ -1,2 +1,2 @@
-export {Routes, RouteNamesEnum} from './routes'
+export {routes, RouteNamesEnum} from './routes'
 export type {IRoute} from './routes'

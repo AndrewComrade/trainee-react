@@ -8,7 +8,7 @@ export interface IRoute {
     name: string;
 }
 
-export const Routes: IRoute[] = [
+export const routes: IRoute[] = [
     {
         path: RouteNamesEnum.HOME,
         name: 'Home'
