@@ -9,7 +9,7 @@
   text-decoration: none;
   color: gray;
 
-  &:hover {
+  &:hover:not(.activeLink) {
     color: black;
   }
 }

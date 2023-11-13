@@ -4,9 +4,9 @@ import {Container} from "@/layout";
 import {useAppDispatch, useAppSelector} from "@/store";
 import {usersActions, IUser} from "@/store/reducers/userSlice/userSlice";
 import { v4 as uuidv4 } from 'uuid';
+import {Button} from "@/UI";
 
-interface HomePageProps {
-}
+interface HomePageProps {}
 
 export const HomePage: FC<HomePageProps> = () => {
 
@@ -30,13 +30,13 @@ export const HomePage: FC<HomePageProps> = () => {
   return (
     <div className={styles.HomePage}>
       <Container>
-        <button onClick={handleAddUser}>
+        <Button onClick={handleAddUser} variant="outlined">
           Add user
-        </button>
+        </Button>
 
         <div className={styles.usersList}>
           {users.length && users.map((user) => (
-            <div className={styles.User}>
+            <div key={user.id} className={styles.User}>
               <span>ID: {user.id}</span>
               <span>Name: {user.name}</span>
               <span>Age: {user.age}</span>
