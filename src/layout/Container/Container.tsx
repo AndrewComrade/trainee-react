@@ -1,20 +1,16 @@
 import React, {FC, ReactNode} from 'react';
 import styles from './Container.module.scss';
+import classNames from "classnames";
 
 interface ContainerProps {
-    children: ReactNode;
-    maxWidth?: number;
-    fluid?: boolean;
+  children: ReactNode;
+  className?: string;
 }
 
-export const Container: FC<ContainerProps> = ({ children, maxWidth = 1060, fluid = false }) => {
-    const containerStyle = {
-        maxWidth: fluid ? '100%' : `${maxWidth}px`
-    }
-
-    return (
-        <div className={styles.Container} style={containerStyle}>
-            {children}
-        </div>
-    );
+export const Container: FC<ContainerProps> = ({children, className}) => {
+  return (
+    <div className={classNames(styles.Container, className)}>
+      {children}
+    </div>
+  );
 };

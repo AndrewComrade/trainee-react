@@ -1,20 +1,8 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
+import {User} from "@/components/User/model/types/user";
+import {UsersStateSchema} from "@/components/User/model/types/usersStateSchema";
 
-
-export interface IUser {
-  id: number | string;
-  name: string;
-  age: number;
-  isActive: boolean;
-  counter: number;
-}
-
-interface UserState {
-  users: IUser[]
-  currentUser: IUser | null
-}
-
-const initialState: UserState = {
+const initialState: UsersStateSchema = {
   users: [
     {
       id: 1,
@@ -29,19 +17,33 @@ const initialState: UserState = {
       name: 'Alex',
       isActive: true,
       counter: 0,
+    },
+    {
+      id: 3,
+      age: 31,
+      name: 'Anna',
+      isActive: true,
+      counter: 0,
+    },
+    {
+      id: 4,
+      age: 22,
+      name: 'Kate',
+      isActive: true,
+      counter: 0,
     }
   ],
   currentUser: null
 }
 
-const userSlice = createSlice({
+const usersSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
-    addUser(state, action: PayloadAction<IUser>) {
+    addUser(state, action: PayloadAction<User>) {
       state.users.push(action.payload)
     },
-    editUser(state, action: PayloadAction<IUser>) {
+    editUser(state, action: PayloadAction<User>) {
       state.users.map((user) => {
         if (user.id === action.payload.id) {
           return action.payload
@@ -60,4 +62,6 @@ const userSlice = createSlice({
   }
 })
 
-export const {actions: usersActions, reducer: usersReducer} = userSlice
+export const {actions: usersActions} = usersSlice
+
+export const {reducer: usersReducer} = usersSlice
