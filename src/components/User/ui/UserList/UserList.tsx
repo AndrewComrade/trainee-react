@@ -12,6 +12,10 @@ interface UserListProps {
 export const UserList: FC<UserListProps> = ({className}) => {
   const users = useAppSelector(getUsers)
 
+  const onRemoveUser = (id: number | string) => {
+
+  }
+
   return (
     <div className={classNames(styles.UserList, className)}>
       {users.length && users.map(user => (

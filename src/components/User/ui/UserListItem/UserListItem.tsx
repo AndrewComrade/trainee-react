@@ -19,7 +19,7 @@ export const UserListItem: FC<UserListItemProps> = ({user}) => {
     >
       <div className={styles.content}>
         <span>Age: {age}</span>
-        <span>Is active: {isActive}</span>
+        <span>Is active: {isActive.toString()}</span>
         <span>Counter: {counter}</span>
       </div>
     </Card>

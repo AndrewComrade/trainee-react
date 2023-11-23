@@ -1,5 +1,6 @@
 import React, {FC} from 'react';
 import {Modal} from "@/components/Modal/Modal";
+import {AddUserForm} from "@/modules/addUserForm/components/AddUserForm/AddUserForm";
 
 interface AddUserModalProps {
     isOpen: boolean;
@@ -9,7 +10,7 @@ interface AddUserModalProps {
 export const AddUserModal: FC<AddUserModalProps> = ({isOpen, handleClose}) => {
     return (
         <Modal isOpen={isOpen} handleClose={handleClose}>
-            Add User Modal
+            <AddUserForm onClose={handleClose}/>
         </Modal>
     );
 };

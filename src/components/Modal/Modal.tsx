@@ -1,7 +1,9 @@
-import React, {FC, ReactNode} from 'react';
+import React, {FC, ReactNode, useCallback, useEffect} from 'react';
 import styles from './Modal.module.scss';
 import classNames from "classnames";
 import {Portal} from "@/components/Portal/Portal";
+import {Button} from "antd";
+import {CloseOutlined} from "@ant-design/icons";
 
 interface ModalProps {
   children: ReactNode;
@@ -20,16 +22,39 @@ export const Modal: FC<ModalProps> = (props) => {
     handleClose
   } = props
 
-  const onContentClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    e.stopPropagation()
-  }
+  const onContentClick = useCallback((event: React.MouseEvent<HTMLDivElement>) => {
+    event.stopPropagation()
+  }, []);
+
+  const onEscapeKeydown = useCallback((event: React.KeyboardEvent<HTMLElement> | KeyboardEvent) => {
+    if (event.key === 'Escape') {
+      handleClose()
+    }
+  }, [handleClose])
+
+
+  useEffect(() => {
+    if (isOpen) {
+      document.addEventListener('keydown', onEscapeKeydown)
+    }
+
+    return () => {
+      document.removeEventListener('keydown', onEscapeKeydown)
+    }
+  }, [isOpen, onEscapeKeydown]);
 
   if (!isOpen) return null
 
   return (
     <Portal>
-      <div className={classNames(styles.Modal, modalClassName)} onClick={handleClose}>
+      <div className={classNames(styles.Modal, modalClassName)}>
         <div className={classNames(styles.modalContent, modalContentClassName)} onClick={onContentClick}>
+          <Button
+            type="default"
+            icon={<CloseOutlined/>}
+            className={styles.closeBtn}
+            onClick={handleClose}
+          />
           {children}
         </div>
       </div>
