@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React, {FC, memo} from 'react';
 import styles from './UserListItem.module.scss';
 import {User} from "@/modules/User/model/types/user";
 import {Card} from "antd";
@@ -8,7 +8,7 @@ interface UserListItemProps {
   user: User;
 }
 
-export const UserListItem: FC<UserListItemProps> = ({user}) => {
+export const UserListItem: FC<UserListItemProps> = memo(({user}) => {
   const {name, age, counter, isActive} = user
 
   return (
@@ -24,4 +24,4 @@ export const UserListItem: FC<UserListItemProps> = ({user}) => {
       </div>
     </Card>
   );
-};
+});

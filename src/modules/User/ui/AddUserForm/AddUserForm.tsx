@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React, {FC, memo} from 'react';
 import styles from './AddUserForm.module.scss';
 import {Button, Form, Input, InputNumber, Checkbox} from "antd";
 import {useAppDispatch} from "@/store";
@@ -18,7 +18,7 @@ const initialFormValue: FormValues = {
   isActive: false
 }
 
-export const AddUserForm: FC<AddUserFormProps> = ({onClose}) => {
+export const AddUserForm: FC<AddUserFormProps> = memo(({onClose}) => {
   const [form] = Form.useForm()
   const dispatch = useAppDispatch()
 
@@ -90,4 +90,4 @@ export const AddUserForm: FC<AddUserFormProps> = ({onClose}) => {
       </Button>
     </Form>
   );
-};
+});

@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React, {FC, memo} from 'react';
 import styles from './Navigation.module.scss';
 import {routes} from "@/routes";
 import {Link, useLocation} from "react-router-dom";
@@ -6,7 +6,7 @@ import classNames from "classnames";
 
 interface NavigationProps {}
 
-export const Navigation: FC<NavigationProps> = () => {
+export const Navigation: FC<NavigationProps> = memo(() => {
     const location = useLocation()
 
     return (
@@ -20,4 +20,4 @@ export const Navigation: FC<NavigationProps> = () => {
             ))}
         </div>
     );
-};
+});

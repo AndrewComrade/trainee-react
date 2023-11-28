@@ -1,11 +1,11 @@
-import React, {FC} from 'react';
+import React, {FC, memo} from 'react';
 import styles from './UsersPage.module.scss';
 import {Container} from "@/layout";
 import {AddUserModal, UserList} from "@/modules/User";
 import {useModal} from "@/hooks";
 import {Button} from "antd";
 
-export const UsersPage: FC = () => {
+export const UsersPage: FC = memo(() => {
   const {isOpen, handleOpen, handleClose} = useModal()
 
   return (
@@ -21,4 +21,4 @@ export const UsersPage: FC = () => {
       <AddUserModal isOpen={isOpen} handleClose={handleClose}/>
     </div>
   );
-};
+});

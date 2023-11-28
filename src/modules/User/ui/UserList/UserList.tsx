@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React, {FC, memo} from 'react';
 import styles from './UserList.module.scss';
 import classNames from "classnames";
 import {useAppSelector} from "@/store";
@@ -9,7 +9,7 @@ interface UserListProps {
   className?: string;
 }
 
-export const UserList: FC<UserListProps> = ({className}) => {
+export const UserList: FC<UserListProps> = memo(({className}) => {
   const users = useAppSelector(getUsers)
 
   const onRemoveUser = (id: number | string) => {
@@ -23,4 +23,4 @@ export const UserList: FC<UserListProps> = ({className}) => {
       ))}
     </div>
   );
-};
+});

@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React, {FC, memo} from 'react';
 import styles from './Header.module.scss';
 import {Navigation} from "@/components";
 import {Container} from "@/layout";
@@ -7,7 +7,7 @@ import {Switch} from "antd";
 interface HeaderProps {
 }
 
-export const Header: FC<HeaderProps> = () => {
+export const Header: FC<HeaderProps> = memo(() => {
   const handleSwitch = () => {
     console.log('Switched')
   }
@@ -26,5 +26,5 @@ export const Header: FC<HeaderProps> = () => {
       </Container>
     </div>
   );
-};
+});
 
