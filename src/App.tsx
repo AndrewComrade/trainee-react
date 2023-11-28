@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import React from 'react';
 import styles from './App.scss';
 import {Main} from "@/layout";

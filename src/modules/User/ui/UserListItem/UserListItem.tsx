@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import styles from './UserListItem.module.scss';
-import {User} from "@/components/User/model/types/user";
+import {User} from "@/modules/User/model/types/user";
 import {Card} from "antd";
 
 interface UserListItemProps {

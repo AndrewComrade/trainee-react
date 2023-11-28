@@ -2,8 +2,8 @@ import React, {FC} from 'react';
 import styles from './AddUserForm.module.scss';
 import {Button, Form, Input, InputNumber, Checkbox} from "antd";
 import {useAppDispatch} from "@/store";
-import {usersActions} from "@/components/User/model/slice/usersSlice";
-import {User} from "@/components/User/model/types/user";
+import {usersActions} from "@/modules/User/model/slice/usersSlice";
+import {User} from "@/modules/User/model/types/user";
 import {v4} from "uuid";
 
 interface AddUserFormProps {

@@ -1,7 +1,7 @@
 import React, {FC, ReactNode, useCallback, useEffect} from 'react';
 import styles from './Modal.module.scss';
 import classNames from "classnames";
-import {Portal} from "@/components/Portal/Portal";
+import {Portal} from "@/components";
 import {Button} from "antd";
 import {CloseOutlined} from "@ant-design/icons";
 

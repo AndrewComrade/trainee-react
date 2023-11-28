@@ -1,4 +1,4 @@
-import {User} from "@/components/User/model/types/user";
+import {User} from "@/modules/User/model/types/user";
 
 export interface UsersStateSchema {
   users: User[]
